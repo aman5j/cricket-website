@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="relative bg-[#0b1d13] text-[#FFFFFF] shadow-md">
+        <nav class="flex items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-[#22C55E]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <span class="font-bold text-lg tracking-wide">
+                    CRIC <span class="text-[#22C55E]">INFO</span>
+                </span>
+            </div>
+
+            <ul id="nav-menu" 
+                class="hidden absolute top-full left-0 w-full bg-gray-900 flex-col py-4 gap-4 
+                md:static md:w-auto md:bg-transparent md:flex md:flex-row md:py-0 md:gap-8 
+                items-center text-sm font-semibold text-[#E5E7EB] z-50">
+                
+                <li class="nav-item active relative pb-1 cursor-pointer">
+                    <a href="#" class="text-[#FFFFFF]">Home</a>
+                    <div class="nav-border absolute bottom-0 left-0 w-full h-[3px] bg-[#22C55E] rounded-t-sm"></div>
+                </li>
+                
+                <li class="nav-item relative pb-1 hover:text-[#FFFFFF] transition-colors cursor-pointer">
+                    <a href="#matches-section">Matches</a>
+                </li>
+                
+                <li class="nav-item relative pb-1 hover:text-[#FFFFFF] transition-colors cursor-pointer">
+                    <a href="#playersFeatures-section">Players</a>
+                </li>
+            </ul>
+
+            <button id="mobile-menu-toggle" class="md:hidden text-[#E5E7EB] hover:text-[#FFFFFF] focus:outline-none">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            </button>
+
+        </nav>
+    </header>
+
+    <!-- <section class="banner-section position-relative overflow-hidden">
+        <div class="banner-img-box">
+            <img src="images/banner5.png" alt="Cricket Banner" class="img-fluid w-100 object-fit-cover banner-bg-img">
+        </div>
+
+        <div class="content position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <h3 class="COLOR-PALETTE2 fw-bold display-4 mb-1">LIVE.PLAY.WIN</h3>
+                        <h2 class="COLOR-PALETTE5 fw-bold display-4 mb-0">THE GAME OF</h2>
+
+                        <div class="mb-3">
+                            <h2 class="COLOR-PALETTE2 fw-bold display-3 d-inline-block custom-underline pb-1 mb-0">CRICKET</h2>
+                        </div>
+
+                        <P class="COLOR-PALETTE5 fs-5 mb-0 mt-3">Stay updated with live matches,</P>
+                        <P class="COLOR-PALETTE5 fs-5 mb-4 ">player stats and more.</P>
+
+                        <a href="#" class="btn custom-btn-green btn-lg fw-bold rounded-1 px-4 py-2">EXPLORE NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="banner-section">
+       <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <h3 class="COLOR-PALETTE2 fw-bold display-4 mb-1">LIVE.PLAY.WIN</h3>
+                        <h2 class="COLOR-PALETTE5 fw-bold display-4 mb-0">THE GAME OF</h2>
+
+                        <div class="mb-3">
+                            <h2 class="COLOR-PALETTE2 fw-bold display-3 d-inline-block custom-underline pb-1 mb-0">CRICKET</h2>
+                        </div>
+
+                        <P class="COLOR-PALETTE5 fs-5 mb-0 mt-3">Stay updated with live matches,</P>
+                        <P class="COLOR-PALETTE5 fs-5 mb-4 ">player stats and more.</P>
+
+                        <a href="#" class="btn custom-btn-green btn-lg fw-bold rounded-1 px-4 py-2">EXPLORE NOW</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="upcoming-matches">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+            <h3 class="section-title">UPCOMING MATCHES</h3>
+            <a href="#matches-section" class="view-all">View All</a>
+            </div>
+            <div class="row mt-4 g-3">
+
+                <!-- Match Card 1 -->
+                <div class="col-md-4">
+                    <div class="match-card text-center p-3">
+                        <h6 class="teams mb-2">
+                            <span class="team1">MI</span>
+                            <span class="vs">vs</span>
+                            <span class="team2">CSK</span>
+                        </h6>
+                        <p class="match-date mb-1">May 10, 2024</p>
+                        <p class="match-time mb-2">07:30 PM</p>
+                        <span class="status">Upcoming</span>
+                    </div>
+                </div>
+
+                <!-- Match Card 2 -->
+                <div class="col-md-4">
+                    <div class="match-card text-center p-3">
+                        <h6 class="teams mb-2">
+                            <span class="team1">RCB</span>
+                            <span class="vs">vs</span>
+                            <span class="team2">KKR</span>
+                        </h6>
+                        <p class="match-date mb-1">May 11, 2024</p>
+                        <p class="match-time mb-2">07:30 PM</p>
+                        <span class="status">Upcoming</span>
+                    </div>
+                </div>
+
+                
+                <!-- Match Card 3 -->
+                <div class="col-md-4">
+                    <div class="match-card text-center p-3">
+                        <h6 class="teams mb-2">
+                            <span class="team1">DC</span>
+                            <span class="vs">vs</span>
+                            <span class="team2">PBKS</span>
+                        </h6>
+                        <p class="match-date mb-1">May 12, 2024</p>
+                        <p class="match-time mb-2">07:30 PM</p>
+                        <span class="status">Upcoming</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="upcoming-matches featured-players">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+            <h3 class="section-title">FEATURED PLAYERS</h3>
+            <a href="#playersFeatures-section" class="view-all">View All</a>
+            </div>
+            <div class="row mt-4 g-3">
+
+                <!-- Player 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center"
+                      data-runs="12000+"
+                      data-matches="252"
+                      data-sr="135.50+"
+                      data-about="Virat Kohli is an Indian international cricketer and former captain..."
+                      data-pstat1item="total runs"
+                      data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/virat-kohli.png" class="img-fluid player-img mb-3" alt="Virat Kohli">
+                        <div class="p-3">
+                            <p class="player-name">Virat Kohli</p>
+                            <p class="player-role">Batsman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center"
+                        data-wickets="500+"
+                        data-matches="235"
+                        data-economy="4.60"
+                        data-about="Jasprit Bumrah is a once-in-a-generation talent and the undisputed spearhead of the Indian bowling attack.";
+                        data-pstat1item="total wickets"
+                        data-pstat3item="Economy"
+                    >
+                        <img src="images/jusprit-bumrah.png" class="img-fluid player-img mb-3" alt="Jasprit Bumrah">
+                        <div class="p-3">
+                            <p class="player-name">Jasprit Bumrah</p>
+                            <p class="player-role">Bowler</p>
+                        </div>
+                    </div>
+                </div>
+                
+               <!-- Player 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center"
+                        data-runs="6000+"
+                        data-matches="280+"
+                        data-sr="144.40+"
+                        data-about="Hardik Pandya is a premier Indian all-rounder and a dynamic force in world cricket. Known for his explosive power-hitting and ability to provide crucial breakthroughs with his medium-fast bowling, he has been a central figure in India's major successes, including the 2024 T20 World Cup and the 2025 ICC Champions Trophy victory.";
+                        data-pstat1item="total runs"
+                        data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/hardik-pandya.png" class="img-fluid player-img mb-3" alt="Hardik Pandya">
+                        <div class="p-3">
+                            <p class="player-name">Hardik pandya</p>
+                            <p class="player-role">All-rounder</p>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Player 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center"
+                        data-runs="19000+"
+                        data-matches="500+"
+                        data-sr="130.00+"
+                        data-about="Rohit Sharma is an iconic Indian international cricketer and the former captain of the Indian national team across all formats."
+                        data-pstat1item="total runs"
+                        data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/rohit-sharma.png" class="img-fluid player-img mb-3" alt="Rohit Sharma">
+                        <div class="p-3">
+                            <p class="player-name">Rohit Sharma</p>
+                            <p class="player-role">Batsman</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="playerModal">
+        <div class="modal-container">
+            <span class="close-x">&times;</span>
+
+            <div class="modal-content-wrapper">
+                <div class="modal-left">
+                    <img src="" alt="Player Image" id="modalImg" >
+                </div>
+
+                <div class="modal-right">
+                    <h2 id="modalName">VIRAT KOHLI</h2>
+                    <p class="model-role" id="modalRole">Batsman</p>
+
+                    <div class="modat-stats">
+                        <div class="stat-item">
+                            <h3 id="modalRuns">12000+</h3>
+                            <span id="statItem1Span">Total Runs</span>
+                        </div>
+                        <div class="stat-item">
+                            <h3 id="modalMatches">252</h3>
+                            <span id="statItem2Span">Matches Played</span>
+                        </div>
+                        <div class="stat-item">
+                            <h3 id="modalSR">135.50</h3>
+                            <span id="statItem3Span">Strike Rate</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-about">
+                        <h4>ABOUT</h4>
+                        <p id="modalAbout"></p>
+                    </div>
+
+                    <button class="modal-close-btn">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="matches-section" class="matches-widgets">
+        <h2 class="widgets-title">ALL MATCHES</h2>
+
+        <div class="filter-tabs matches-filter-tabs">
+            <button class="tab active" data-filter="all">All (<span class="count">0</span>)</button>
+            <button class="tab" data-filter="upcoming">Upcoming (<span class="count">0</span>)</button>
+            <button class="tab" data-filter="live">Live (<span class="count">0</span>)</button>
+            <button class="tab" data-filter="completed">Completed (<span class="count">0</span>)</button>
+        </div>
+
+        <div class="matches-list">
+
+            <div class="match-card-for-matches" data-status="upcoming">
+                <div class="match-teams">
+                    <div class="team">
+                        <!-- <div class="team-logo logo-mi">MI</div> -->
+                         <img src="images/mi-logo.webp" alt="MI" >
+                        </div>
+                        <div class="vs-text">VS</div>
+                        <div class="team">
+                            <!-- <div class="team-logo logo-csk">CSK</div> -->
+                            <img src="images/csk-logo.webp" alt="MI" >
+                        <span class="team-name">CSK</span>
+                     </div>
+                </div>
+
+                <div class="match-details">
+                    <div class="match-date">May 10, 2024</div>
+                    <div class="match-time">07:30 PM</div>
+                    <div class="match-status status-upcoming">Upcoming</div>
+                </div>
+            </div>
+
+
+            <div class="match-card-for-matches" data-status="upcoming">
+                <div class="match-teams">
+                    <div class="team">
+                        <!-- <div class="team-logo logo-mi">MI</div> -->
+                         <img src="images/rcb-logo.webp" alt="RCB" >
+                        </div>
+                        <div class="vs-text">VS</div>
+                        <div class="team">
+                            <!-- <div class="team-logo logo-csk">CSK</div> -->
+                            <img src="images/kkr-logo.avif" alt="KKR" >
+                        <span class="team-name">KKR</span>
+                     </div>
+                </div>
+
+                <div class="match-details">
+                    <div class="match-date">May 11, 2024</div>
+                    <div class="match-time">07:30 PM</div>
+                    <div class="match-status status-upcoming">Upcoming</div>
+                </div>
+            </div>
+
+
+            <div class="match-card-for-matches" data-status="upcoming">
+                <div class="match-teams">
+                    <div class="team">
+                        <!-- <div class="team-logo logo-mi">MI</div> -->
+                         <img src="images/dc-logo.webp" alt="DC" >
+                        </div>
+                        <div class="vs-text">VS</div>
+                        <div class="team">
+                            <!-- <div class="team-logo logo-csk">CSK</div> -->
+                            <img src="images/pbks-logo.svg" alt="PBKS" >
+                        <span class="team-name">PBKS</span>
+                     </div>
+                </div>
+
+                <div class="match-details">
+                    <div class="match-date">May 12, 2024</div>
+                    <div class="match-time">07:30 PM</div>
+                    <div class="match-status status-upcoming">Upcoming</div>
+                </div>
+            </div>
+
+
+
+             <div class="match-card-for-matches" data-status="live">
+                <div class="match-teams">
+                    <div class="team">
+                        <!-- <div class="team-logo logo-mi">MI</div> -->
+                         <img src="images/rajasthan-royals-logo.webp" alt="RR" >
+                        </div>
+                        <div class="vs-text">VS</div>
+                        <div class="team">
+                            <!-- <div class="team-logo logo-csk">CSK</div> -->
+                            <img src="images/srh-logo.svg" alt="SRH" >
+                        <span class="team-name">SRH</span>
+                     </div>
+                </div>
+
+                <div class="match-details">
+                    <div class="match-date">May 13, 2024</div>
+                    <div class="match-time">07:30 PM</div>
+                    <div class="match-status status-live">Live</div>
+                </div>
+            </div>
+
+
+
+            <div class="match-card-for-matches" data-status="completed">
+                <div class="match-teams">
+                    <div class="team">
+                        <!-- <div class="team-logo logo-mi">MI</div> -->
+                         <img src="images/gt-logo.webp" alt="GT" >
+                        </div>
+                        <div class="vs-text">VS</div>
+                        <div class="team">
+                            <!-- <div class="team-logo logo-csk">CSK</div> -->
+                            <img src="images/lsg-logo.png" alt="LSG" >
+                        <span class="team-name">LSG</span>
+                     </div>
+                </div>
+
+                <div class="match-details">
+                    <div class="match-date">May 14, 2024</div>
+                    <div class="match-time">07:30 PM</div>
+                    <div class="match-status status-completed">Completed</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div id="playersFeatures-section" class="matches-widgets">
+        <h2 class="widgets-title">PLAYERS</h2>
+
+        <div class="filter-tabs players-filter-tabs">
+            <button class="tab active" data-filter="all">All</button>
+            <button class="tab" data-filter="batsman">Batsman</button>
+            <button class="tab" data-filter="bowler">Bowler</button>
+            <button class="tab" data-filter="all-rounder">All-rounder</button>
+        </div>
+
+        <div class="container">
+            <div class="row mt-4 g-3">
+
+                <!-- Player 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="batsman"
+                      data-runs="12000+"
+                      data-matches="252"
+                      data-sr="135.50+"
+                      data-about="Virat Kohli is an Indian international cricketer and former captain..."
+                      data-pstat1item="total runs"
+                      data-pstat2item="Matches Played"
+                      data-pstat3item="Strike Rate"
+                      
+                    >
+                        <img src="images/virat-kohli.png" class="img-fluid player-img mb-3" alt="Virat Kohli">
+                        <div class="p-3">
+                            <p class="player-name">Virat Kohli</p>
+                            <p class="player-role">Batsman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="batsman"
+                        data-runs="19000+"
+                        data-matches="500+"
+                        data-sr="130.00+"
+                        data-about="Rohit Sharma is an iconic Indian international cricketer and the former captain of the Indian national team across all formats."
+                        data-pstat1item="total runs"
+                        data-pstat2item="Matches Played"
+                        data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/rohit-sharma.png" class="img-fluid player-img mb-3" alt="Rohit Sharma">
+                        <div class="p-3">
+                            <p class="player-name">Rohit Sharma</p>
+                            <p class="player-role">Batsman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="bowler"
+                        data-wickets="500+"
+                        data-matches="235"
+                        data-economy="4.60"
+                        data-about="Jasprit Bumrah is a once-in-a-generation talent and the undisputed spearhead of the Indian bowling attack.";
+                        data-pstat1item="total wickets"
+                        data-pstat2item="Matches Played"
+                        data-pstat3item="Economy"
+                    >
+                        <img src="images/jusprit-bumrah.png" class="img-fluid player-img mb-3" alt="Jasprit Bumrah">
+                        <div class="p-3">
+                            <p class="player-name">Jasprit Bumrah</p>
+                            <p class="player-role">Bowler</p>
+                        </div>
+                    </div>
+                </div>
+                
+               <!-- Player 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="all-rounder"
+                        data-runs="6000+"
+                        data-matches="280+"
+                        data-sr="144.40+"
+                        data-about="Hardik Pandya is a premier Indian all-rounder and a dynamic force in world cricket. Known for his explosive power-hitting and ability to provide crucial breakthroughs with his medium-fast bowling, he has been a central figure in India's major successes, including the 2024 T20 World Cup and the 2025 ICC Champions Trophy victory.";
+                        data-pstat1item="total runs"
+                        data-pstat2item="Matches Played"
+                        data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/hardik-pandya.png" class="img-fluid player-img mb-3" alt="Hardik Pandya">
+                        <div class="p-3">
+                            <p class="player-name">Hardit Pandya</p>
+                            <p class="player-role">All-rounder</p>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                 <!-- Player 5 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="all-rounder"
+                      data-runs="7500+"
+                      data-wickets="630+"
+                      data-sr="128.00"
+                      data-about="Ravindra Jadeja, widely known as Sir Jadeja, is arguably the greatest three-dimensional cricketer of the modern era. A master of left-arm orthodox bowling, a lower-order batting powerhouse, and a fielder with a rocket arm, he is currently the No. 1 ranked Test All-Rounder in the world."
+                      data-pstat1item="Total Runs"
+                      data-pstat2item="Total Wickets"
+                      data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/ravindra jadeja.png" class="img-fluid player-img mb-3" alt="Virat Kohli">
+                        <div class="p-3">
+                            <p class="player-name">Ravindra Jadeja</p>
+                            <p class="player-role">All-rounder</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Player 6 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="batsman"
+                        data-runs="9600+"
+                        data-matches="233"
+                        data-sr="137.00+"
+                        data-about="KL Rahul is a master of versatility and one of India’s most technically sound modern-day batters. Known for his class and composure, he has successfully transitioned from a specialized Test opener to a reliable middle-order wicket-keeper batter in ODIs and a destructive force in T20s.";
+                        data-pstat1item="total runs"
+                        data-pstat2item="Matches Played"
+                        data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/kl rahul.png" class="img-fluid player-img mb-3" alt="Jasprit Bumrah">
+                        <div class="p-3">
+                            <p class="player-name">KL Rahul</p>
+                            <p class="player-role">Batsman</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Player 7 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="bowler"
+                        data-wickets="225"
+                        data-matches="181"
+                        data-economy="8.02"
+                        data-about="Yuzvendra Chahal is a master leg-spinner and the most successful bowler in the history of the Indian Premier League. A former chess player who represented India at the youth level, Chahal is known for his immense bravery in flighting the ball and his giant-killer instinct.";
+                        data-pstat1item="total wickets"
+                        data-pstat2item="Matches Played"
+                        data-pstat3item="Strike Rate"
+                    >
+                        <img src="images/yujvendar chahal.png" class="img-fluid player-img mb-3" alt="Hardik Pandya">
+                        <div class="p-3">
+                            <p class="player-name">Yuzvendra Chahal</p>
+                            <p class="player-role">Bowler</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- Player 8 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="player-card text-center" data-role="batsman"
+                        data-runs="6600+"
+                        data-matches="4163"
+                        data-sr="208"
+                        data-about="Shubman Gill, often hailed as the Prince of Indian cricket, is a generational talent who has rapidly ascended to become the leader of the national side. He is the youngest player in history to score an ODI double century and holds the record for the highest T20I score by an Indian (126*). As of 2026, he serves as the India national captain for ODIs and Tests."
+                        data-pstat1item="International runs"
+                        data-pstat2item="IPL runs"
+                        data-pstat3item="Highest ODI Score"
+                    >
+                        <img src="images/subman gill.png" class="img-fluid player-img mb-3" alt="Rohit Sharma">
+                        <div class="p-3">
+                            <p class="player-name">Subman Gill</p>
+                            <p class="player-role">Batsman</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
