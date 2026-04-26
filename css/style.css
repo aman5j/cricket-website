@@ -57,7 +57,7 @@ html {
 .banner-section {
     width: 100%;
     height: 80vh; /* Adjust height as needed */
-    background-image: url('file:///D:/IT%20Learning/cricket-website/images/banner5.png');
+    background-image: url('../images/banner5.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
